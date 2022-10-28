@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FYI-Downloader | Free video/audio downloader.",
+  "name": "FYI-Downloader | Free video/audio downloader.",
   "icons": [
     {
       "src": "favicon.ico",
