@@ -42,19 +42,21 @@ export default function App() {
   };
 
   return (
-    <div className="App container">
+    <div className="App container scrollbar scrollbar-primary">
       <div className="header d-flex justify-content-around">
-        <img src={Logo} style={{ height: "100px" }}></img>
+        <img src={Logo} style={{ height: "74px" }}></img>
         <h3>
           The best place to extract audio and download MP3 or Video you want
           from any website{" "}
         </h3>
       </div>
       <BrowserRouter>
-        <div className="type-wrap">
-          Download video/audio from :{" "}
-          <span style={{ whiteSpace: "pre" }} ref={el} />
-        </div>
+        {videoUrl === "" && (
+          <div className="type-wrap">
+            Download video/audio from :{" "}
+            <span style={{ whiteSpace: "pre" }} ref={el} />
+          </div>
+        )}
         <input
           className="input"
           type="text"

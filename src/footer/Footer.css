@@ -1,24 +1,37 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* background-color: #b4f151; */
+  height: 1rem;
+}
 .footerbox1 {
   padding: 50px 0px;
-  background-color: #b4f151;
+  background: linear-gradient(45deg, cadetblue, pink);
 }
 .contactnum {
   font-size: 30px;
   font-weight: 600;
-  color: #ffa20d !important;
+  /* color: crimson !important; */
+  color: rgb(119, 8, 54) !important;
 }
 
 .callus {
   font-size: 12px;
   font-weight: 300;
 }
-
+.link-text {
+  /* color: crimson; */
+  color: rgb(119, 8, 54);
+}
 .link-text:hover {
   font-size: 18px;
 }
 .footerImg {
   padding: 5px;
   border-radius: 50%;
+  width: 90% !important;
+  max-width: 95% !important;
   background-color: #ffffff;
   width: 30px;
   height: 30px;
@@ -31,5 +44,6 @@
 
 .footerbox2 {
   padding: 50px 50px;
-  background-color: #ffa20d;
+  background: linear-gradient(45deg, cadetblue, pink);
+  /* background-color: #ffa20d; */
 }

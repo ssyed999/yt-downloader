@@ -8,27 +8,27 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div className="footer">
-      <div className="row no-gutters">
+      <div className="row ">
         <div className="col-md-6 footerbox1">
-          <div className=" row no-gutters justify-content-center align-items-center">
+          <div className=" row  justify-content-center align-items-center">
             <div className="">
               <p className="m-0 callus">CALL US TODAY</p>
-              <a className="contactnum link-text" href="tel:+91 7004544049">
-                +91 7004544049
+              <a className="contactnum link-text" href="tel:+91 9000000000">
+                +91 9000000000
               </a>
               <div className="row mt-1">
                 <div className="footerImg">
-                  <a target="_blank">
-                    <img src={Twitter} alt="" />
+                  <a target="_blank" href="https://twitter.com">
+                    <img src={Twitter} alt="www.twitter.com" />
                   </a>
                 </div>
                 <div className="footerImg">
-                  <a target="_blank">
+                  <a target="_blank" href="https://fb.com">
                     <img src={Fb} alt="" />
                   </a>
                 </div>
                 <div className="footerImg">
-                  <a target="_blank">
+                  <a target="_blank" href="https://linkedin.com">
                     <img src={LinkedIn} alt="" />
                   </a>
                 </div>
@@ -54,15 +54,13 @@ export default function Footer() {
                     Our Services
                   </Link>
                 </li>
-
-                {/* <li><Link className="link-text" to="/OurPricing">Our Pricing</Link></li> */}
                 <li>
                   <Link className="link-text" to="/">
                     Contact Us
                   </Link>
                 </li>
               </ul>
-              <p className="mt-5">
+              <p className="mt-5" style={{ color: "white" }}>
                 FYI Downloader, All rights reserved @ Copyrights 2022;
               </p>
             </div>

@@ -24,7 +24,9 @@ body {
   position: absolute;
   font-weight: 700;
   font-size: 25px;
-  color: white;
+  /* color: rgb(9, 96, 102); */
+  color: rgb(119, 8, 54);
+  z-index: -1;
   font-family: sans-serif;
   background: linear-gradient(45deg, cadetblue, pink);
 }
