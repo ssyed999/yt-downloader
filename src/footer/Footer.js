@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="row ">
-        <div className="col-md-6 footerbox1">
+        <div className="footerbox1">
           <div className=" row  justify-content-center align-items-center">
             <div className="">
               <p className="m-0 callus">CALL US TODAY</p>
@@ -36,29 +36,29 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="col-md-6 footerbox2">
+        <div className="footerbox2">
           <div className="row no-gutters justify-content-start align-items-center">
             <div>
               <ul className="px-0">
                 <h5>Quick Links</h5>
               </ul>
               <ul className="my-4 px-0">
-                <li>
+                <div>
                   <Link className="link-text" to="/">
                     About Company
                   </Link>
-                </li>
+                </div>
 
-                <li>
+                <div>
                   <Link className="link-text" to="/">
                     Our Services
                   </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link className="link-text" to="/">
                     Contact Us
                   </Link>
-                </li>
+                </div>
               </ul>
               <p className="mt-5" style={{ color: "white" }}>
                 FYI Downloader, All rights reserved @ Copyrights 2022;

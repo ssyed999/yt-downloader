@@ -43,9 +43,9 @@ export default function App() {
 
   return (
     <div className="App container scrollbar scrollbar-primary">
-      <div className="header d-flex justify-content-around">
+      <div className="header d-flex align-items-center ">
         <img src={Logo} style={{ height: "74px" }}></img>
-        <h3>
+        <h3 className="align-self-center flex-grow-1">
           The best place to extract audio and download MP3 or Video you want
           from any website{" "}
         </h3>
