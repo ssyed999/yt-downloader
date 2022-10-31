@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import Typed from "typed.js";
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-
+import Footer from "./footer/Footer";
+import Logo from "../src/assets/Logo3.png";
 export default function App() {
   const [videoUrl, setVideoUrl] = useState("");
   const [source, setSource] = useState("");
@@ -40,26 +42,39 @@ export default function App() {
   };
 
   return (
-    <div className="App">
-      <div className="type-wrap">
-        Download video/audio from :{" "}
-        <span style={{ whiteSpace: "pre" }} ref={el} />
+    <div className="App container scrollbar scrollbar-primary">
+      <div className="header d-flex align-items-center ">
+        <img src={Logo} style={{ height: "74px" }}></img>
+        <h3 className="align-self-center flex-grow-1">
+          The best place to extract audio and download MP3 or Video you want
+          from any website{" "}
+        </h3>
       </div>
-      <input
-        className="input"
-        type="text"
-        onChange={handleChange}
-        placeholder="Enter Video Url"
-      />
-      {videoUrl ? (
-        <iframe
-          title="downloader"
-          className="iframe"
-          src={source}
-          allowtransparency={true}
-          scrolling={true}
-        ></iframe>
-      ) : null}
+      <BrowserRouter>
+        {videoUrl === "" && (
+          <div className="type-wrap">
+            Download video/audio from :{" "}
+            <span style={{ whiteSpace: "pre" }} ref={el} />
+          </div>
+        )}
+        <input
+          className="input"
+          type="text"
+          onChange={handleChange}
+          placeholder="Enter Video Url"
+        />
+        {videoUrl ? (
+          <iframe
+            title="downloader"
+            className="iframe"
+            src={source}
+            allowtransparency={true}
+            scrolling={true}
+          ></iframe>
+        ) : null}
+
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
