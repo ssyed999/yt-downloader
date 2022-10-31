@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Typed from "typed.js";
-import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Footer from "./footer/Footer";
 import Logo from "../src/assets/Logo3.png";
@@ -44,7 +44,7 @@ export default function App() {
   return (
     <div className="App container scrollbar scrollbar-primary">
       <div className="header d-flex align-items-center ">
-        <img src={Logo} style={{ height: "74px" }}></img>
+        <img src={Logo} style={{ height: "74px" }} alt="icon"></img>
         <h3 className="align-self-center flex-grow-1">
           The best place to extract audio and download MP3 or Video you want
           from any website{" "}

@@ -2,7 +2,6 @@ import React from "react";
 import Fb from "../assets/facebook.svg";
 import LinkedIn from "../assets/linkdin.svg";
 import Twitter from "../assets/twitter.svg";
-import Logo from "../assets/Logo3.png";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 export default function Footer() {
@@ -18,18 +17,26 @@ export default function Footer() {
               </a>
               <div className="row mt-1">
                 <div className="footerImg">
-                  <a target="_blank" href="https://twitter.com">
+                  <a
+                    target="_blank"
+                    href="https://twitter.com"
+                    rel="noreferrer"
+                  >
                     <img src={Twitter} alt="www.twitter.com" />
                   </a>
                 </div>
                 <div className="footerImg">
-                  <a target="_blank" href="https://fb.com">
+                  <a target="_blank" href="https://fb.com" rel="noreferrer">
                     <img src={Fb} alt="" />
                   </a>
                 </div>
-                <div className="footerImg">
-                  <a target="_blank" href="https://linkedin.com">
-                    <img src={LinkedIn} alt="" />
+                <div className="footerImg" rel="noreferrer">
+                  <a
+                    target="_blank"
+                    href="https://linkedin.com"
+                    rel="noreferrer"
+                  >
+                    <img src={LinkedIn} alt="linkedIn" />
                   </a>
                 </div>
               </div>
