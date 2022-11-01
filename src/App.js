@@ -3,9 +3,7 @@ import Typed from "typed.js";
 import { BrowserRouter } from "react-router-dom";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import "./App.css";
-import Footer from "./footer/Footer";
-import BackgroundImage from "../src/assets/background3.jpg";
+import Footer from './footer/Footer'
 import Logo from "../src/assets/Logo3.png";
 export default function App() {
   const [videoUrl, setVideoUrl] = useState("");
