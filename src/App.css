@@ -21,7 +21,7 @@ body {
 .header {
   width: 100%;
   padding: 20px;
-  height: 75px;
+  min-height: 75px;
   font-weight: 700;
   font-size: 25px;
   color: rgb(119, 8, 54);
@@ -36,13 +36,12 @@ body {
 }
 
 .input {
-  width: 50%;
+  flex: 0.75;
   height: 50px;
   font-size: 24px;
   padding: 0 20px;
   border: none;
   border-radius: 25px;
-  margin: 20px 0;
 }
 
 .type-wrap {
@@ -58,13 +57,27 @@ body {
   height: 50px;
   padding: 0 20px;
   border: none;
-  margin-left: 40px;
   border-radius: 25px;
-  /* box-shadow: 0 8px 2px 0 #c9ccd1; */
   background-color: aquamarine;
   cursor: pointer;
 }
 
 .search-btn:active {
   box-shadow: none;
+}
+
+.input-box {
+  margin: 20px;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  display: flex;
+}
+@media only screen and (max-width: 576px) {
+  .input-box {
+    flex-direction: column;
+  }
+  .input {
+    flex: auto;
+  }
 }

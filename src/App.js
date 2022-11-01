@@ -48,7 +48,7 @@ export default function App() {
 
   const handleSearch = () => {
     if (videoUrl) {
-      const url = `https://convert2mp3s.com/api/widget?url=${videoUrl}`;
+      const url = `https://convert2mp3s.com/api/widgetv2?url=${videoUrl}`;
       setSource(url);
     }
   };
@@ -213,15 +213,17 @@ export default function App() {
             Download video/audio from :{" "}
             <span style={{ whiteSpace: "pre" }} ref={el} />
           </div>
-          <input
-            className="input"
-            type="text"
-            onChange={handleChange}
-            placeholder="Enter Video Url"
-          />
-          <button className="search-btn" onClick={handleSearch}>
-            Get Download Link
-          </button>
+          <div className="input-box">
+            <input
+              className="input"
+              type="text"
+              onChange={handleChange}
+              placeholder="Enter Video Url"
+            />
+            <button className="search-btn" onClick={handleSearch}>
+              Get Download Link
+            </button>
+          </div>
           {source ? (
             <iframe
               title="downloader"
