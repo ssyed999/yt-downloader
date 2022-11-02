@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import Typed from "typed.js";
-import { BrowserRouter } from "react-router-dom";
+import "./App.css";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Footer from "./footer/Footer";
@@ -10,15 +10,6 @@ import background from "../src/assets/background.jpeg";
 export default function App() {
   const [videoUrl, setVideoUrl] = useState("");
   const [source, setSource] = useState("");
-
-  const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
-
-    await loadFull(engine);
-  }, []);
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
   // Create reference to store the DOM element containing the animation
   const el = useRef(null);
   // Create reference to store the Typed instance itself
@@ -36,6 +27,15 @@ export default function App() {
     return () => {
       typed.current.destroy();
     };
+  }, []);
+
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
+
+    await loadFull(engine);
+  }, []);
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
   }, []);
 
   const handleChange = (e) => {

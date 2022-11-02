@@ -10,12 +10,12 @@
   flex-direction: column;
 }
 body {
-  /* background: rgb(2, 0, 36); */
+  background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
     rgba(62, 100, 111, 1) 0%,
-    rgba(0, 255, 170, 0.971) 150%
+    rgba(0, 212, 255, 0.9710477941176471) 150%
   );
 }
 .header {

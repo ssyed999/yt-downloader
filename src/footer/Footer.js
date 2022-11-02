@@ -28,7 +28,6 @@ export default function Footer() {
             <Link className="link-text" to="/">
               About Company
             </Link>
-
             <Link className="link-text" to="/">
               Our Services
             </Link>
