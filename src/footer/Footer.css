@@ -1,19 +1,16 @@
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  z-index: -1;
-  /* background-color: #b4f151; */
-  height: 1rem;
-}
-.footerbox1 {
-  padding: 50px 0px;
+  /* padding: 20px 0px; */
   background: linear-gradient(45deg, cadetblue, pink);
+}
+.footer-content {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
 }
 .contactnum {
   font-size: 30px;
   font-weight: 600;
-  /* color: crimson !important; */
   color: rgb(119, 8, 54) !important;
 }
 
@@ -22,25 +19,19 @@
   font-weight: 300;
 }
 .link-text {
-  /* color: crimson; */
   color: rgb(119, 8, 54);
 }
-.link-text:hover {
-  font-size: 18px;
-}
+
 .footerImg {
   padding: 5px;
-  /* border-radius: 50%; */
-  /* width: 90% !important; */
-  /* max-width: 95% !important; */
-  /* background-color: #ffffff; */
-  /* width: 30px; */
-  /* height: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-left: 20px; */
   cursor: pointer;
+}
+.quick-links {
+  display: flex;
+  flex-direction: column;
 }
 
 .footerbox2 {
@@ -48,4 +39,12 @@
 
   background: linear-gradient(45deg, cadetblue, pink);
   /* background-color: #ffa20d; */
+}
+.call-us {
+  display: flex;
+  flex-direction: column;
+}
+.copyright {
+  color: white;
+  padding: 10px;
 }

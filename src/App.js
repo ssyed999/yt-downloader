@@ -3,11 +3,14 @@ import Typed from "typed.js";
 import { BrowserRouter } from "react-router-dom";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import Footer from './footer/Footer'
+import Footer from "./footer/Footer";
 import Logo from "../src/assets/Logo3.png";
+import background from "../src/assets/background.jpeg";
+
 export default function App() {
   const [videoUrl, setVideoUrl] = useState("");
   const [source, setSource] = useState("");
+
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
 
@@ -22,11 +25,6 @@ export default function App() {
   const typed = useRef(null);
 
   useEffect(() => {
-    const url = `https://convert2mp3s.com/api/widget?url=${videoUrl}`;
-    setSource(url);
-  }, [videoUrl]);
-
-  useEffect(() => {
     const options = {
       strings: ["Youtube", "Instagram", "Facebook"],
       typeSpeed: 150,
@@ -34,13 +32,8 @@ export default function App() {
       loop: true,
       loopCount: Infinity,
     };
-
-    // elRef refers to the <span> rendered below
     typed.current = new Typed(el.current, options);
-
     return () => {
-      // Make sure to destroy Typed instance during cleanup
-      // to prevent memory leaks
       typed.current.destroy();
     };
   }, []);
@@ -48,87 +41,24 @@ export default function App() {
   const handleChange = (e) => {
     const { value } = e.target;
     setVideoUrl(value);
+    if (value === "") {
+      setSource("");
+    }
+  };
+
+  const handleSearch = () => {
+    if (videoUrl) {
+      const url = `https://convert2mp3s.com/api/widgetv2?url=${videoUrl}`;
+      setSource(url);
+    }
   };
 
   return (
-    <div className="App container scrollbar scrollbar-primary">
+    <>
       <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
-        // options={{
-        //   background: {
-        //     color: {
-        //       value: "#fffff",
-        //       // value: "#90ee90",
-        //     },
-        //   },
-        //   fpsLimit: 120,
-        //   interactivity: {
-        //     events: {
-        //       onClick: {
-        //         enable: true,
-        //         mode: "push",
-        //       },
-        //       onHover: {
-        //         enable: true,
-        //         mode: "repulse",
-        //       },
-        //       resize: true,
-        //     },
-        //     modes: {
-        //       push: {
-        //         quantity: 4,
-        //       },
-        //       repulse: {
-        //         distance: 200,
-        //         duration: 0.4,
-        //       },
-        //     },
-        //   },
-        //   particles: {
-        //     color: {
-        //       value: "#ffffff",
-        //     },
-        //     links: {
-        //       color: "#ffffff",
-        //       distance: 150,
-        //       enable: true,
-        //       opacity: 0.5,
-        //       width: 1,
-        //     },
-        //     collisions: {
-        //       enable: true,
-        //     },
-        //     move: {
-        //       directions: "none",
-        //       enable: true,
-        //       outModes: {
-        //         default: "bounce",
-        //       },
-        //       random: false,
-        //       speed: 6,
-        //       straight: false,
-        //     },
-        //     number: {
-        //       density: {
-        //         enable: true,
-        //         area: 800,
-        //       },
-        //       value: 80,
-        //     },
-        //     opacity: {
-        //       value: 0.5,
-        //     },
-        //     shape: {
-        //       type: "circle",
-        //     },
-        //     size: {
-        //       value: { min: 1, max: 5 },
-        //     },
-        //   },
-        //   detectRetina: true,
-        // }}
         options={{
           fullScreen: {
             enable: true,
@@ -172,18 +102,18 @@ export default function App() {
               },
             },
             size: {
-              value: 30,
+              value: 10,
               random: true,
               anim: {
                 enable: true,
-                speed: 10,
+                speed: 0,
                 size_min: 10,
                 sync: false,
               },
             },
             line_linked: {
               enable: true,
-              distance: 100,
+              distance: 0,
               color: "#ffffff",
               opacity: 1,
               width: 1,
@@ -261,54 +191,51 @@ export default function App() {
           retina_detect: true,
           fps_limit: 60,
           background: {
-            image: `url(${BackgroundImage})`,
+            image: `url(${background})`,
           },
         }}
       />
-      <div className="header d-flex align-items-center ">
-        <img src={Logo} style={{ height: "74px" }} alt="icon"></img>
-        <h3 className="align-self-center flex-grow-1">
-          The best place to extract audio and download MP3 or Video you want
-          from any website{" "}
-        </h3>
-      </div>
-      {/* <nav className="navbar navbar-expand-lg navbar-dark bg-light">
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">Download Video/Audio</li>
-            <li className="nav-item">Extract audio from video link</li>
-          </ul>
+      <div className="App ">
+        <div className="header d-flex align-items-center ">
+          <img
+            className="logo"
+            src={Logo}
+            style={{ height: "50px" }}
+            alt="icon"
+          ></img>
+          <h3 className="align-self-center flex-grow-1">
+            The best place to extract audio and download MP3 or Video you want
+            from any website{" "}
+          </h3>
         </div>
-      </nav> */}
-      <BrowserRouter>
-        {videoUrl === "" && (
+        <div style={{ width: "100%" }}>
           <div className="type-wrap">
             Download video/audio from :{" "}
             <span style={{ whiteSpace: "pre" }} ref={el} />
           </div>
-        )}
-        <input
-          className="input"
-          type="text"
-          onChange={handleChange}
-          placeholder="Enter Video Url"
-        />
-        {videoUrl ? (
-          <iframe
-            title="downloader"
-            className="iframe"
-            src={source}
-            allowtransparency={true}
-            scrolling={true}
-          ></iframe>
-        ) : (
-          <div style={{ color: "white" }}>
-            Wait while we are proccessing you request.
+          <div className="input-box">
+            <input
+              className="input"
+              type="text"
+              onChange={handleChange}
+              placeholder="Enter Video Url"
+            />
+            <button className="search-btn" onClick={handleSearch}>
+              Get Download Link
+            </button>
           </div>
-        )}
-
+          {source ? (
+            <iframe
+              title="downloader"
+              className="iframe"
+              src={source}
+              allowtransparency={true}
+              scrolling={true}
+            ></iframe>
+          ) : null}
+        </div>
         <Footer />
-      </BrowserRouter>
-    </div>
+      </div>
+    </>
   );
 }
